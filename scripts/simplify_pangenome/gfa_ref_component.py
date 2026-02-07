@@ -35,6 +35,12 @@ for line in openfile(gfa_file):
             path_info = line.strip().split()[6]
             path_node = re.split('<|>', path_info)[1:]
             ref_component_list.append(node_component_dict[int(path_node[0])])
+    if line[0] == "P":
+        sample = line.strip().split()[1].split("#")[0]
+        if sample in ref_sample_list:
+            path_info = line.strip().split()[2]
+            ref_component_list.append(node_component_dict[int(path_info.split(",")[0].replace("+","").replace("-",""))])
+
 
 fo = open(out_gfa_file, "w")
 for line in openfile(gfa_file):
@@ -51,6 +57,11 @@ for line in openfile(gfa_file):
         path_info = line.strip().split()[6]
         path_node = re.split('<|>', path_info)[1:]
         component = node_component_dict[int(path_node[0])]
+        if component in ref_component_list:
+            fo.write(line)
+    elif line[0] == "P":
+        path_info = line.strip().split()[2]
+        component = node_component_dict[int(path_info.split(",")[0].replace("+","").replace("-",""))]
         if component in ref_component_list:
             fo.write(line)
     else:

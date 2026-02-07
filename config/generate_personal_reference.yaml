@@ -10,7 +10,7 @@ lr_zmw_fastqs:
   - test_data/{sample}/{sample}.lr_zmw.fastq.gz
 
 external_pangenome:
-  - test_data/reference/hgsvc3-hprc.clip_d21.gbz
+  - test_data/reference/external.test.gbz
 
 reference:
   CHM13: test_data/reference/chm13v2.0.fa
