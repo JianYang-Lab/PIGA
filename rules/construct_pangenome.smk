@@ -323,7 +323,7 @@ rule smoothxg:
         mkdir -p {params.smoothxg_dir}
         sample_number=$(grep ">" {input.fa} | awk '{{split($1,a,".");if(length(a)==2) print a[1];else print a[1]"."a[2] }}' | sort -u | wc -l)
         python3 scripts/simplify_pangenome/gfa_ref_component.py {input.seqwish_gfa} {output.seqwish_component_gfa} CHM13
-        smoothxg -t {threads} -g {input.seqwish_component_gfa} --base {params.smoothxg_dir} -r $sample_number --chop-to 100 -I 0.98 -R 0 -j 0 -e 0 -l 1400,2200 -p 1,4,6,2,26,1 -O 0.001 -Y $[100*$sample_number] -d 0 -D 0 -V -c 200M -W 1 -o {output.smoothxg_raw_gfa}
+        smoothxg -t {threads} -g {output.seqwish_component_gfa} --base {params.smoothxg_dir} -r $sample_number --chop-to 100 -I 0.98 -R 0 -j 0 -e 0 -l 1400,2200 -p 1,4,6,2,26,1 -O 0.001 -Y $[100*$sample_number] -d 0 -D 0 -V -c 200M -W 1 -o {output.smoothxg_raw_gfa}
         grep ^P {output.smoothxg_raw_gfa} | grep CHM13 | awk '{{print $2}}' > {output.groom_path}
         odgi groom -R {output.groom_path} -i {output.smoothxg_raw_gfa} -o - | odgi view -i - -g > {output.smoothxg_gfa}
         """
