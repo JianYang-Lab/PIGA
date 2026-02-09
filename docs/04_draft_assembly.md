@@ -73,24 +73,20 @@ This is used to correctly handle sex-chromosome reconstruction.
 
 `consensus_fasta` _(optional)_: Path to the sample-specific consensus FASTA file.
 If omitted, the workflow will use the default:
-`c5_personal_ref/consensus_fasta/{sample}/CHM13.af_pangenome.{sample}_polish.fasta`
+`c5_personal_ref/consensus_fasta/{sample}/{sample}.personal_ref.fasta`
 
 `chain` _(optional)_: Path to the chain file describing coordinate mapping between CHM13 and the consensus assembly.
 If omitted, the workflow will use the default:
-`c5_personal_ref/consensus_fasta/{sample}/CHM13.af_pangenome.{sample}_polish.chain`
+`c5_personal_ref/consensus_fasta/{sample}/{sample}.personal_ref.chain`
 
 `sample_phased_vcf` _(optional)_: Path to the sample's phased VCF.
 If omitted, the workflow will use the default:
-`c4_phase_snv/shapeit4/samples/{sample}/{sample}.shapeit4.vcf.gz`
-
-`sample_WGS_meryl` _(optional)_: Path to the sample’s WGS meryl directory.
-If omitted, the workflow will use the default:
-`c3_merge_snv/meryl/{sample}/{sample}-WGS.meryl`
+`c4_phase_snv/sample_vcf/{sample}/{sample}.shapeit.vcf.gz`
 
 ### Usage
 
 ```bash
-snakemake -s Snakefile --cores 64 --jobs 64 --configfile config/draft_assembly.yaml --workflow-profile ./profile/config_slurm/
+snakemake -s Snakefile --cores 64 --jobs 64 --configfile config/draft_assembly.yaml --profile ./profile/config_local/
 ```
 
 ### Output

@@ -35,17 +35,17 @@ The file must be space-delimited, with:
 
 `merge_merfin_filter_vcf` _(optional)_: Path to the merged, Merfin-filtered VCF file.
 If omitted, the workflow will use the default:
-`c3_merge_snv/merfin/merge/{prefix}.CHM13.consensus.phase1.call_set.hwe_missing_filter.vcf.gz`
+`c3_merge_snv/merfin/merge/{prefix}.consensus.merfin.vcf.gz`
 
 `zmw_bam` _(optional)_: Path to the PacBio ZMW BAM file for each sample.
 Use `{sample}` as a wildcard.
 If omitted, the workflow will use the default:
-`c2_call_lr_snv/lr_mapping/{sample}/{sample}.zmw.pbmm2.bam
+`c2_call_lr_snv/sample_bam/{sample}/{sample}.zmw.srt.bam`
 
 ### Usage
 
 ```bash
-snakemake -s Snakefile --cores 64 --jobs 64 --configfile config/phase_snv.yaml --workflow-profile ./profile/config_slurm/
+snakemake -s Snakefile --cores 64 --jobs 64 --configfile config/phase_snv.yaml --profile ./profile/config_local/
 ```
 
 ### Output

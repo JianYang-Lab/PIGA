@@ -9,10 +9,13 @@ sr_fastqs:
 lr_zmw_fastqs:
   - test_data/{sample}/{sample}.lr_zmw.fastq.gz
 
+lr_hifi_fastqs:
+  - test_data/{sample}/{sample}.lr_hifi.fastq.gz
+
 external_pangenome:
   - test_data/reference/external.test.gbz
 
 reference:
-  CHM13: test_data/reference/chm13v2.0.fa
+  CHM13: test_data/reference/chm13v2.0.fasta
 
 prefix: test

@@ -31,7 +31,7 @@ Merge_SNV = config.get("Merge_SNV", False)
 Phase_SNV = config.get("Phase_SNV", False)
 Generate_Personal_Reference = config.get("Generate_Personal_Reference", False)
 Draft_Assembly = config.get("Draft_Assembly", False)
-Consturct_Pangenome = config.get("Consturct_Pangenome", False)
+Construct_Pangenome = config.get("Construct_Pangenome", False)
 Simplify_Pangenome = config.get("Simplify_Pangenome", False)
 Merge_Pangenome = config.get("Merge_Pangenome", False)
 Infer_Diploid_Path = config.get("Infer_Diploid_Path", False)
@@ -79,7 +79,7 @@ elif Draft_Assembly:
         input:
             rules.all_draft_assembly.input
     
-elif Consturct_Pangenome:
+elif Construct_Pangenome:
 
     include: "rules/construct_pangenome.smk"
     rule all:

@@ -48,7 +48,7 @@ Use `{sample}` as a wildcard, which will be replaced automatically by the sample
 ### Usage
 
 ```bash
-snakemake -s Snakefile --cores 64 --jobs 64 --configfile config/call_sr_snv.yaml --workflow-profile ./profile/config_slurm/
+snakemake -s Snakefile --cores 64 --jobs 64 --configfile config/call_sr_snv.yaml --profile ./profile/config_local/
 ```
 
 ### Output
@@ -98,7 +98,7 @@ Use `{sample}` as a wildcard; it will be automatically replaced with sample name
 ### Usage
 
 ```bash
-snakemake -s Snakefile --cores 64 --jobs 64 --configfile config/call_lr_snv.yaml --workflow-profile ./profile/config_slurm/
+snakemake -s Snakefile --cores 64 --jobs 64 --configfile config/call_lr_snv.yaml --profile ./profile/config_local/
 ```
 
 ### Output
@@ -136,16 +136,16 @@ Use `{sample}` as a wildcard; it will be automatically replaced with sample name
 
 `sr_vcf` _(optional)_: Path to the short-read SNV VCF file.
 If omitted, the workflow will use the default:
-`c1_call_sr_snv/merged_vcf/{prefix}.gatk.variant_recalibrated.filter.analysis_set.biallelic.vcf.gz`
+`c1_call_sr_snv/merged_vcf/{prefix}.gatk.variant_recalibrated.filter.vcf.gz`
 
 `lr_vcf` _(optional)_: Path to the long-read SNV VCF file.
 If omitted, the workflow will use the default:
-`c2_call_lr_snv/lr_beagle/concat/{prefix}.deepvariant.whatshap.filter.analysis_set.biallelic_snp.beagle.filter.vcf.gz`
+`c2_call_lr_snv/lr_beagle/concat/{prefix}.deepvariant.whatshap.beagle.vcf.gz`
 
 ### Usage
 
 ```bash
-snakemake -s Snakefile --cores 64 --jobs 64 --configfile config/merge_snv.yaml --workflow-profile ./profile/config_slurm/
+snakemake -s Snakefile --cores 64 --jobs 64 --configfile config/merge_snv.yaml --profile ./profile/config_local/
 ```
 
 ### Output

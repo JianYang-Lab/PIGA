@@ -3,7 +3,7 @@ Construct_Pangenome: true
 samples: test_data/samples.list
 
 reference:
-  CHM13: test_data/reference/chm13v2.0.fa
+  CHM13: test_data/reference/chm13v2.0.fasta
   GRCh38: test_data/reference/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna
 
 external_assembly_list: test_data/external_assembly.list

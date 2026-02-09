@@ -3,13 +3,13 @@ Phase_SNV: true
 samples: test_data/samples.list
 
 reference:
-  CHM13: test_data/reference/chm13v2.0.fa
+  CHM13: test_data/reference/chm13v2.0.fasta
 
 prefix: test
-#if no "merge_merfin_filter_vcf" key, default input will be c3_merge_snv/merfin/merge/{config['prefix']}.CHM13.consensus.phase1.call_set.hwe_missing_filter.vcf.gz
+#if no "merge_merfin_filter_vcf" key, default input will be c3_merge_snv/merfin/merge/{config['prefix']}.consensus.merfin.vcf.gz
 #merge_merfin_filter_vcf: ""
 
 # Please standardize the paths of all samples to the same format, with only the sample names differing, and use the "{sample}" wildcard as a placeholder.
-#if no "zmw_bam" key, default input will be c2_call_lr_snv/lr_mapping/{sample}/{sample}.zmw.pbmm2.bam
+#if no "zmw_bam" key, default input will be c2_call_lr_snv/sample_bam/{sample}/{sample}.zmw.srt.bam
 #zmw_bam: ""
 

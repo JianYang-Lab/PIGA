@@ -64,7 +64,7 @@ The file must be space-delimited, with:
 ### Usage
 
 ```bash
-snakemake -s Snakefile --cores 64 --jobs 64 --configfile config/construct_pangenome.yaml --workflow-profile ./profile/config_slurm/
+snakemake -s Snakefile --cores 64 --jobs 64 --configfile config/construct_pangenome.yaml --profile ./profile/config_local/
 ```
 
 ### Output
@@ -115,10 +115,6 @@ If omitted, the workflow will use the default:
 If omitted, the workflow will use the default:
 `c7_graph_construction/subgraph_id.list`
 
-`subgraph_fa` _(optional)_: Path to the FASTA files of subgraphs.
-If omitted, the workflow will use the default:
-`c7_graph_construction/subgraph/subgraph_{id}/{prefix}_subgraph_{id}.fasta`
-
 `subgraph_gfa` _(optional)_: Path to the GFA files of subgraphs.
 If omitted, the workflow will use the default:
 `c7_graph_construction/subgraph/subgraph_{id}/{prefix}_subgraph_{id}.seqwish.smoothxg.gfaffix.gfa`
@@ -126,7 +122,7 @@ If omitted, the workflow will use the default:
 ### Usage
 
 ```bash
-snakemake -s Snakefile --cores 64 --jobs 64 --configfile config/simplify_pangenome.yaml --workflow-profile ./profile/config_slurm/
+snakemake -s Snakefile --cores 64 --jobs 64 --configfile config/simplify_pangenome.yaml --profile ./profile/config_local/
 ```
 
 ### Output
@@ -166,7 +162,7 @@ If omitted, the workflow will use the default:
 ### Usage
 
 ```bash
-snakemake -s Snakefile --cores 64 --jobs 64 --configfile config/merge_pangenome.yaml --workflow-profile ./profile/config_slurm/
+snakemake -s Snakefile --cores 64 --jobs 64 --configfile config/merge_pangenome.yaml --profile ./profile/config_local/
 ```
 
 ### Output

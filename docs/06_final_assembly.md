@@ -66,7 +66,7 @@ If omitted, the workflow will use the default:
 
 `gfa` _(optional)_: Path to the merged graph GFA file.
 If omitted, the workflow will use the default:
-`c7_graph_construction/graph_merge/{prefix}.nopath.gfa`
+`c7_graph_construction/graph_merge/{prefix}.{chr}.assembly.gfa`
 
 `variant_path` _(optional)_: Path to the variant path files by chromosome.
 If omitted, the workflow will use the default:
@@ -87,7 +87,7 @@ If omitted, the workflow will use the default:
 ### Usage
 
 ```bash
-snakemake -s Snakefile --cores 64 --jobs 64 --configfile config/infer_diploid_path.yaml --workflow-profile ./profile/config_slurm/
+snakemake -s Snakefile --cores 64 --jobs 64 --configfile config/infer_diploid_path.yaml --profile ./profile/config_local/
 ```
 
 ### Output

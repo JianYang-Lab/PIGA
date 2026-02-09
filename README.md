@@ -108,6 +108,7 @@ snakemake --dry-run -s Snakefile --cores 32 --configfile config/config.yaml --pr
 snakemake -s Snakefile --cores 32 --configfile config/config.yaml --profile ./profile/config_local/
 # The broken pipeline can be continued by rerunning with --rerun-incomplete.
 snakemake --rerun-incomplete -s Snakefile --cores 32 --configfile config/config.yaml --profile ./profile/config_local/
+# Warnings about TensorRT and parse_sam_aux_fields from DeepVariant can be safely ignored.
 ```
 
 #### Option 2: Cluster Execution (with Profile)
@@ -148,7 +149,7 @@ The output file contain:
 
 ## Documentation
 
-PIGA consists of six modules, each containing several commands that can be executed independently. A detailed tutorial is provided for each module.
+PIGA consists of six modules, each containing several commands that can be executed step-by-step. A detailed tutorial is provided for each module. To independently run modules that require intermediate files from other modules as input, you can directly copy the needed files from the `test_data/example_output` directory, which is downloaded by `download.sh`.
 
 #### [1. SNV Detection](docs/01_snv_detection.md)
 

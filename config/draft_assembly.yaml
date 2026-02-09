@@ -16,19 +16,17 @@ lr_subreads_bam:
   - test_data/{sample}/{sample}.lr_subreads.bam
 
 reference:
-  CHM13: test_data/reference/chm13v2.0.fa
+  CHM13: test_data/reference/chm13v2.0.fasta
 
 par_region: test_data/reference/chm13v2.0_chrX_PAR.bed
 
 prefix: test
-# #if no "consensus_fasta" key, default input will be “c5_personal_ref/consensus_fasta/{sample}/CHM13.af_pangenome.{sample}_polish.fasta”
+# #if no "consensus_fasta" key, default input will be “c5_personal_ref/consensus_fasta/{sample}/{sample}.personal_ref.fasta”
 # consensus_fasta:
 #
-# #if no "chain" key, default input will be "c5_personal_ref/consensus_fasta/{sample}/CHM13.af_pangenome.{sample}_polish.chain"
+# #if no "chain" key, default input will be "c5_personal_ref/consensus_fasta/{sample}/{sample}.personal_ref.chain"
 # chain:
 #
-# #if no "sample_phased_vcf" key, default input will be "c4_phase_snv/shapeit4/samples/{sample}/{sample}.shapeit4.vcf.gz"
+# #if no "sample_phased_vcf" key, default input will be "c4_phase_snv/sample_vcf/{sample}/{sample}.shapeit.vcf.gz"
 # sample_phased_vcf:
-#
-# #if no "sample_WGS_meryl" key, default input will be "c3_merge_snv/meryl/{sample}/{sample}-WGS.meryl" (directory)
-# sample_WGS_meryl:
+

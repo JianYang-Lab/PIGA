@@ -10,14 +10,14 @@ lr_hifi_fastqs:
   - test_data/{sample}/{sample}.lr_hifi.fastq.gz
 
 reference:
-  CHM13: test_data/reference/chm13v2.0.fa
+  CHM13: test_data/reference/chm13v2.0.fasta
 
 prefix: test
-# #if no "sr_vcf" key, default input will be c1_call_sr_snv/merged_vcf/{config['prefix']}.gatk.variant_recalibrated.filter.analysis_set.biallelic.vcf.gz
+# #if no "sr_vcf" key, default input will be c1_call_sr_snv/merged_vcf/{config['prefix']}.gatk.variant_recalibrated.filter.vcf.gz
 # sr_vcf:
 #     "YOUR PATH"
 #
-# #if no "lr_vcf" key, default input will be c2_call_lr_snv/lr_beagle/concat/{config['prefix']}.deepvariant.whatshap.filter.analysis_set.biallelic_snp.beagle.filter.vcf.gz
+# #if no "lr_vcf" key, default input will be c2_call_lr_snv/lr_beagle/concat/{config['prefix']}.deepvariant.whatshap.beagle.vcf.gz
 # lr_vcf:
 #     "YOUR PATH"
 

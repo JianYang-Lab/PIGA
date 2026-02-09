@@ -226,7 +226,7 @@ rule merge_merfin_vcf:
         """
         bcftools merge -0 -m none --threads {threads} {input.final_vcfs} | \
             bcftools sort -m {resources.max_mem_gb}G | \
-            bcftools plugin fill-tags --threads {threads} | \
+            bcftools plugin fill-tags --threads {threads} -- -t AN,HWE | \
             bcftools view --threads {threads} -i "AC!=0 && HWE>=1e-6" -o {output.merge_merfin_vcf}
         tabix -f {output.merge_merfin_vcf}
         """

@@ -4,7 +4,6 @@ rule all_simplify_pangenome:
 
 rule graph_bed_filtering:
     input:
-        fa = get_subgraph_fa,
         gfa = get_subgraph_gfa
     output:
         high_coverage_bed = f"c7_graph_construction/subgraph/subgraph_{{id}}/{config['prefix']}_subgraph_{{id}}.high_coverage.bed",
@@ -18,7 +17,7 @@ rule graph_bed_filtering:
     threads: 8
     shell:
         """
-        sample_number=$(grep ">" {input.fa} | awk '{{split($1,a,".");if(length(a)==2) print a[1];else print a[1]"."a[2] }}' | sort -u | wc -l)
+        sample_number=$(grep ^W {input.gfa} | awk '{{print $2,$3}}' | sort -u | wc -l)
         python3 scripts/simplify_pangenome/gfa_high-coverage_bed.py {input.gfa} $[sample_number*20] 200 {output.high_coverage_bed}
         python3 scripts/simplify_pangenome/gfa_minigraph_unaligned.py {input.gfa} {output.minigraph_unaligned_bed}
         cat {output.high_coverage_bed} {output.minigraph_unaligned_bed} | bedtools sort | bedtools merge -d 1000 > {output.merged_bed}
