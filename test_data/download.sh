@@ -1,6 +1,6 @@
 #!/bin/bash
 # Download the required test dataset
-expected_md5="27419a5f52905a44e42a6cd311a43d" 
+expected_md5="7577da881db2a1ed477c39c9bb6f0788" 
 if wget -c https://yanglab.westlake.edu.cn/data/1kcp/piga.test_data.tar.gz; then
     echo "Download successful."
 else
