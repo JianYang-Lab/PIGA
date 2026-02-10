@@ -106,7 +106,8 @@ snakemake --dry-run -s Snakefile --cores 32 --configfile config/config.yaml --pr
 # Recommended RAM: >300 GB (with 32 cores)
 # Memory requirements scale with the number of cores utilized, allowing flexible resource allocation.
 snakemake -s Snakefile --cores 32 --configfile config/config.yaml --profile ./profile/config_local/
-# The broken pipeline can be continued by rerunning with --rerun-incomplete.
+# The broken pipeline can be continued by rerunning with --unlock and --rerun-incomplete.
+snakemake --unlock -s Snakefile --cores 32 --configfile config/config.yaml --profile ./profile/config_local/
 snakemake --rerun-incomplete -s Snakefile --cores 32 --configfile config/config.yaml --profile ./profile/config_local/
 # Warnings about TensorRT and parse_sam_aux_fields from DeepVariant can be safely ignored.
 ```
