@@ -569,7 +569,7 @@ rule complete_assembly_polish_region_merqury_clip:
         sample_meryl_dir = lambda wildcards, input: os.path.dirname(input.sample_meryl)
     threads: 4
     resources:
-        mem_mb= 30*1024
+        mem_mb= 50*1024
     shell:
         """
         export MERQURY=$CONDA_PREFIX/bin
