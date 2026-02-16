@@ -2,6 +2,7 @@
 # Download the required test dataset
 expected_md5="e6305a2bcf76ebba3574f999d0c20b2b" 
 if wget -c https://zenodo.org/records/18659653/files/piga.test_data.tar.gz?download=1; then
+    mv piga.test_data.tar.gz?download=1 piga.test_data.tar.gz
     echo "Download successful."
 else
     echo "Primary URL failed, trying backup URL."
