@@ -13,6 +13,7 @@ mainDir=$PWD
 buildDir=$PWD/piga_tools_build
 calllrDir=$PWD/scripts/call_lr_snv
 inferDir=$PWD/scripts/infer_diploid_path
+logDir=$PWD/logs_slurm
 binDir=$CONDA_PREFIX/bin
 thread=$(nproc | awk '{print ($1>8)?8:$1}')
 
@@ -20,6 +21,7 @@ rm -rf ${buildDir}
 mkdir -p ${buildDir}
 mkdir -p ${binDir}
 mkdir -p ${calllrDir}
+mkdir -p ${logDir}
 cd ${buildDir}
 
 export LD_LIBRARY_PATH=$CONDA_PREFIX/lib
